@@ -5,14 +5,39 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700,400italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,700' rel='stylesheet' type='text/css'>
 </head>
 <body>
+<header>
+  <nav>
+    <div class="row">
+      <div class="col-xs-12">
+        <ul>
+          <li><%= link_to "Trusted Coach Directory", root_path %></li>
+          <li><%= link_to "Courses", courses_path %></li>
+          <li><%= link_to "Coaches", users_path %></li>
+          <% if current_user %>
+          <li><%= link_to "My Profile", current_user %></li>
+          <li><%= link_to "Edit My Profile", edit_user_registration_path %></li>
+          <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+          <% else %>
+          <li><%= link_to "Register", new_user_registration_path %></li>
+          <li><%= link_to "Login", new_user_session_path, class: "login" %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
 <% flash.each do |name, message| %>
   <div class="flash-message flash-message-<%= name %>">
     <%= message %>
   </div>
 <% end %>
+<main>
 <%= yield %>
+</main>
 
 </body>
 </html>
