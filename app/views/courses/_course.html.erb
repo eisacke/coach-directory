@@ -1,0 +1,5 @@
+<ul>
+  <li><%= link_to course.title, course %></li>
+  <li>with <%= link_to course.user.try(:first_name) + " " + course.user.try(:second_name), course.user %></li>
+  <li><%= truncate(course.description, :length => 120) %></li>
+</ul>
