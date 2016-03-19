@@ -1,5 +1,13 @@
-<h1>All Users</h1>
+<h1>All Coaches</h1>
 
+<ul>
 <% @users.each do |user| %>
-  <%= user.email  %>
+  <li>
+    <ul>
+      <li><%= user.first_name  %> <%= user.second_name  %></li>
+      <li><%= user.location  %></li>
+      <li><%= link_to 'View ' + user.first_name, user, class: 'btn' %></li>
+    <ul>
+  </li>
 <% end %>
+</ul>

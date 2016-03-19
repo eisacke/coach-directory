@@ -1,5 +1,8 @@
-<h1>User Profile Page</h1>
+<h1>Profile Page</h1>
 
-<%= image_tag @user.image  %>
-
-<%= @user.email  %>
+<ul>
+  <li><%= @user.first_name  %> <%= @user.second_name  %></li>
+  <li><%= @user.location  %></li>
+  <li><%= @user.email  %></li>
+  <li><%= link_to "Edit My Profile", edit_user_registration_path %></li>
+</ul>

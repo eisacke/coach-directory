@@ -11,9 +11,13 @@
 </p>
 
 <p>
-  <strong>User:</strong>
-  <%= @course.user %>
+  <strong>Coach:</strong>
+  <%= @course.user.try(:email) %>
 </p>
 
-<%= link_to 'Edit', edit_course_path(@course) %> |
-<%= link_to 'Back', courses_path %>
+<% if current_user == @course.user %>
+<ul>
+  <li><%= link_to 'Edit', edit_course_path(@course) %></li>
+  <li><%= link_to 'Destroy', @course, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+</ul>
+<% end %>
