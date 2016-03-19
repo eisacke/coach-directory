@@ -5,7 +5,6 @@
   <li><%= @user.location  %></li>
   <li><%= @user.longitude  %> <%= @user.latitude  %></li>
   <li><%= @user.email  %></li>
-  <li><%= image_tag @user.image.thumb.url %></li>
   <li><%= image_tag @user.image.detail.url %></li>
   <li><%= link_to "Edit My Profile", edit_user_registration_path %></li>
 </ul>

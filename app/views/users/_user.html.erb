@@ -1,0 +1,9 @@
+<li class="col-xs-12 user">
+  <%= image_tag user.image.thumb.url %>
+  <ul>
+    <li><%= user.first_name  %> <%= user.second_name  %></li>
+    <li><%= user.location  %></li>
+    <li><%= user.email  %></li>
+    <li><%= link_to 'View Profile', user, class: 'btn' %></li>
+  </ul>
+</li>

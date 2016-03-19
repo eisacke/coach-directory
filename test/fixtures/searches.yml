@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  location: MyString
+  radius: 1.5
+  keywords: MyString
+
+two:
+  location: MyString
+  radius: 1.5
+  keywords: MyString

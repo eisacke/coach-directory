@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<ul>
+  <li>Keywords: <%= @search.keywords %></li>
+  <li>Location: <%= @search.location %></li>
+  <li>Radius: <%= @search.radius %></li>
+  <li></li>
+</ul>
+<br>
+<ul>
+    <%= render @search.users %>
+</ul>
+
+<%= link_to 'Edit', edit_search_path(@search) %> |
+<%= link_to 'Back', searches_path %>

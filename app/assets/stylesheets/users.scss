@@ -4,6 +4,11 @@
 html, body {
   height: 100%;
 }
+
+.section {
+  @extend .row;
+}
+
 .wrapper {
   min-height: 100%;
   height: auto !important;
@@ -107,7 +112,8 @@ header {
 main {
   @extend .container;
   background-color: #FFFFFF;
-  padding: 20px;
+  padding-top: 15px;
+  padding-bottom: 15px;
   margin-top: 20px;
 }
 
@@ -121,5 +127,21 @@ a.btn {
   border-radius: 2px;
   &:hover {
     background-color: #F8BD01;
+  }
+}
+
+.user {
+  height: 150px;
+  overflow: hidden;
+  padding: 15px;
+  ul {
+    display: inline-block;
+  }
+  img {
+    max-height: 100%;
+    display: inline-block;
+  }
+  &:not(:first-child) {
+    border-top: 1px solid #232323;
   }
 }

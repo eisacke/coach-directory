@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :searches
   root 'static#home'
   resources :courses
   devise_for :users
