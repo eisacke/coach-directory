@@ -1,17 +1,11 @@
 <!-- <p id="notice"><%= notice %></p> -->
+<div class="row">
+  <div class="col-xs-12">
+    <h1>All Courses</h1>
+    <%= link_to 'New Course +', new_course_path, class: 'btn' %>
+  </div>
 
-<h1>All Courses</h1>
-<ul>
-    <% @courses.each do |course| %>
-    <li>
-      <ul>
-        <li><%= course.title %></li>
-        <li><%= course.description %></li>
-        <li>With <%= link_to course.user.try(:first_name) + " " + course.user.try(:second_name), course.user %></li>
-        <li><%= link_to 'View', course, class: 'btn' %></li>
-      </ul>
-    </li>
-    <% end %>
-</ul>
-
-<%= link_to 'New Course +', new_course_path, class: 'btn' %>
+  <ul>
+      <%= render @courses %>
+  </ul>
+</div>

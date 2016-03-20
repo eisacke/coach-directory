@@ -1,14 +1,18 @@
-<h1>Profile Page</h1>
+<div class="row">
+  <div class="col-xs-12 user-show">
+    <h1><%= @user.first_name  %> <%= @user.second_name  %></h1>
 
-<ul>
-  <li><%= @user.first_name  %> <%= @user.second_name  %></li>
-  <li><%= @user.location  %></li>
-  <li><%= @user.longitude  %> <%= @user.latitude  %></li>
-  <li><%= @user.email  %></li>
-  <li><%= image_tag @user.image.detail.url %></li>
-  <li><%= link_to "Edit My Profile", edit_user_registration_path %></li>
-</ul>
+    <ul>
+      <li><%= @user.location  %></li>
+      <li><%= @user.email  %></li>
+      <li><a href="<%= @user.image.detail.url %>" data-featherlight="image"><%= image_tag @user.image.thumb.url %></a></li>
+    </ul>
+    <%= link_to "Edit My Profile", edit_user_registration_path, class: 'btn' %>
 
-<h2>Courses &amp; Workshops by <%= @user.first_name  %></h2>
+    <h2>Courses &amp; Workshops by <%= @user.first_name  %></h2>
 
-<%= render @user.courses %>
+  </div>
+  <ul>
+    <%= render @user.courses %>
+  </ul>
+</div>
