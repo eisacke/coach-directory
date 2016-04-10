@@ -2,34 +2,22 @@
 <html>
 <head>
   <title>TrustedCoachDirectory</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
   <link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700,400italic' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.5.9/slick.css"/>
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.5.9/slick-theme.css"/>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.5.9/slick.min.js"></script>
 </head>
-<body>
+<body<%= " id=#{@body_id}" if @body_id %>>
 <div class="wrapper">
-  <header>
-    <nav>
-      <div class="row">
-        <div class="col-xs-12">
-          <ul>
-            <li><%= link_to "Trusted Coach Directory", root_path %></li>
-            <li><%= link_to "Courses", courses_path %></li>
-            <li><%= link_to "Coaches", users_path %></li>
-            <% if current_user %>
-            <li><%= link_to "My Profile", current_user %></li>
-            <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
-            <% else %>
-            <li><%= link_to "Register", new_user_registration_path %></li>
-            <li><%= link_to "Login", new_user_session_path, class: "login" %></li>
-            <% end %>
-          </ul>
-        </div>
-      </div>
-    </nav>
-  </header>
+  <%= render 'header' %>
+  <div class="homepage-banner">
+    <div class="slide" style="background-image: url(/assets/tower.jpg);"></div>
+    <div class="slide" style="background-image: url(/assets/bridge.jpg);"></div>
+  </div>
   <main>
   <% flash.each do |name, message| %>
     <div class="flash-message flash-message-<%= name %>">
@@ -40,9 +28,7 @@
   </main>
   <div class="push"></div>
 </div>
-<div class="footer">
-  <p>&copy; Crown Coaching Ltd. 2016</p>
-</div>
+<%= render 'footer' %>
 
 </body>
 </html>

@@ -1,0 +1,21 @@
+<header>
+  <nav>
+    <div class="row">
+      <div class="col-xs-12">
+        <ul>
+          <li><%= link_to "Trusted Coach Directory", root_path %></li>
+          <li><%= link_to "Courses", courses_path %></li>
+          <li><%= link_to "Coaches", users_path %></li>
+          <li><%= link_to "About", '/about' %></li>
+          <% if current_user %>
+          <li><%= link_to "My Profile", current_user %></li>
+          <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+          <% else %>
+          <li><%= link_to "Register", new_user_registration_path %></li>
+          <li><%= link_to "Login", new_user_session_path, class: "login" %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>

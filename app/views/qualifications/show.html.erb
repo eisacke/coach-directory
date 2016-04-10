@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @qualification.title %>
+</p>
+
+<p>
+  <strong>Attachment:</strong>
+  <%= link_to "Download", @qualification.attachment.url, :target => '_blank' %>
+</p>
+
+<%= link_to 'Edit', edit_qualification_path(@qualification) %> |
+<%= link_to 'Back', qualifications_path %>
